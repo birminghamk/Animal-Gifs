@@ -12,6 +12,7 @@ $ (function() {
 			for (var i = 0; i < buttonTitles.length; i++) {
 				// create a jQuery button
 				var button = $("<button>");
+				button.addClass("individualButton");
 				// add attribute to jQuery button created (attribute title: "button-title", attribute value="button-title at index")
 				button.attr("button-title", buttonTitles[i])
 				//put the current buttonTitle that we are looping through in the button (.text, or .html)
@@ -24,11 +25,14 @@ $ (function() {
 		displayButton();
 
 		//when the user clicks on one of the buttons - function
-		$("button").on("click", function(event) {
+		$(document).on("click", ".individualButton", function(event) {
 			// prevent default
 			event.preventDefault();
 			// get the attribute of the button clicked, and store in a variable
+			console.log($(this));
+			console.log($(this).attr("button-title"))
 			var searchTerm = $(this).attr("button-title");
+			console.log(searchTerm)
 			var rating = "";
 			//clear out old images from page (.empty)
 			$("#imageswithDescription").empty();
@@ -73,40 +77,48 @@ $ (function() {
 
 		// on click of form submit button - function
 		$("#formSubmit").on("click", function() {
+			var userText = $("#exampleInputAnimal1").val();
+			var button = $("<button>");
+			$("#buttons").empty();
+			button.attr("button-title", userText);
+			button.addClass("individualButton");
+
 			//create variable of user input text field
-			var userText = $("input").attr("type");
+			
 			// push variable just created to array (buttonTitles)
-			userText.push(buttonTitles);
+			console.log(userText);
+			button.text(userText);
+			$("#buttons").prepend(button);
 			// run displayButtons function
 			displayButton();
 		
 		}); // END FORM SUBMIT BUTTON
 
-		// //on click of image div - function
-		// $("img").on("click", function() {
-		// 	var state = $(this).attr("data-state");
-		// 	$("img").attr("data-state", "still")
+		//on click of image div - function
+		$("img").on("click", function() {
+			var state = $(this).attr("data-state");
+			$("img").attr("data-state", "still")
 
-		// 	 $("img").attr()
+			 $("img").attr()
 
-		//         if (state === "still") {
-		//               //reset image src to animated version
-		//                $(this).attr("src", $(this).attr("data-animate"));
-		//               //change state variable to animate
-		//               $(this).attr("data-state", "animate");
+		        if (state === "still") {
+		              //reset image src to animated version
+		               $(this).attr("src", $(this).attr("data-animate"));
+		              //change state variable to animate
+		              $(this).attr("data-state", "animate");
 		          
 
-		//         } else {
-		//             //it's already animated
-		//             //reset image src to still version
-		//             $(this).attr("src", $(this).attr("data-still"));
-		//             // change state variable to still 
-		//             $(this).attr("data-state", "still")
+		        } else {
+		            //it's already animated
+		            //reset image src to still version
+		            $(this).attr("src", $(this).attr("data-still"));
+		            // change state variable to still 
+		            $(this).attr("data-state", "still")
+
+		        }
 
 
-
-
-		// }) // END IMAGE CLICK FUNCTION
+		})// END IMAGE CLICK FUNCTION
 					
 			
 
