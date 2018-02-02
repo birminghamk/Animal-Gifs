@@ -71,14 +71,44 @@ $ (function() {
 
 		}) // END BUTTON CLICK FUNCTION
 
-// 			// on click of form submit button - function
-// 			$("#formSubmit").on("click", function() {
-// 				//create variable of user input text field
-// 				// push varialbe just created to array (buttonTitles)
-// 				// run displayButtons function
-// 			//on click of image div - function
-// 					//
-// 			};
+		// on click of form submit button - function
+		$("#formSubmit").on("click", function() {
+			//create variable of user input text field
+			var userText = $("input").attr("type");
+			// push variable just created to array (buttonTitles)
+			userText.push(buttonTitles);
+			// run displayButtons function
+			displayButton();
+		
+		}); // END FORM SUBMIT BUTTON
+
+		// //on click of image div - function
+		// $("img").on("click", function() {
+		// 	var state = $(this).attr("data-state");
+		// 	$("img").attr("data-state", "still")
+
+		// 	 $("img").attr()
+
+		//         if (state === "still") {
+		//               //reset image src to animated version
+		//                $(this).attr("src", $(this).attr("data-animate"));
+		//               //change state variable to animate
+		//               $(this).attr("data-state", "animate");
+		          
+
+		//         } else {
+		//             //it's already animated
+		//             //reset image src to still version
+		//             $(this).attr("src", $(this).attr("data-still"));
+		//             // change state variable to still 
+		//             $(this).attr("data-state", "still")
+
+
+
+
+		// }) // END IMAGE CLICK FUNCTION
+					
+			
 
 }) // END READY FUNCTION
 
