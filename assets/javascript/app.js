@@ -29,14 +29,13 @@ $ (function() {
 			// prevent default
 			event.preventDefault();
 			// get the attribute of the button clicked, and store in a variable
-			console.log($(this));
-			console.log($(this).attr("button-title"))
 			var searchTerm = $(this).attr("button-title");
-			console.log(searchTerm)
+			//make variable for rating
 			var rating = "";
 			//clear out old images from page (.empty)
 			$("#imageswithDescription").empty();
 			// AJAX call to GIPHY
+			//set queryURL with designated variables
 			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&rating= " + rating + "&limit=10&api_key=IZ1X641xsZu5eeKFKlzEF6TSwOBQnrGZ"
 
 			$.ajax({
@@ -58,6 +57,14 @@ $ (function() {
 					var img = $("<img>")
 					// set the src attribute of jQuery image to be the image from GIPHY response (data[i].images.original_still)
 					img.attr("src", results[i].images.original_still.url);
+					//set the resting data state to non-animated
+					img.attr("data-state", "still")
+					//set changed data-state to animate
+					img.attr("data-state", "animate")
+					//set data-animate attribute to animated URL
+					img.attr("data-animate", results[i].images.original.url);
+					//set data-still attribute to still URL
+					img.attr("data-still", results[i].images.original_still.url)
 					// create jQuery paragraph
 					var p = $("<p>");
 					// put the rating from GIPHY response into paragraph created (response.data[i].rating)
@@ -77,46 +84,46 @@ $ (function() {
 
 		// on click of form submit button - function
 		$("#formSubmit").on("click", function() {
+			//create variable for userText that get text from input field
 			var userText = $("#exampleInputAnimal1").val();
+			//create jQuery button
 			var button = $("<button>");
+			//clear previous buttons from the page
 			$("#buttons").empty();
+			//create button attribute that inserts the user input as the title of the new button
 			button.attr("button-title", userText);
+			//add class to button so it will be added with other buttons
 			button.addClass("individualButton");
-
-			//create variable of user input text field
-			
-			// push variable just created to array (buttonTitles)
-			console.log(userText);
+			//insert text from input field to button html
 			button.text(userText);
-			$("#buttons").prepend(button);
+			//append each button to the #buttons div
+			$("#buttons").append(button);
 			// run displayButtons function
 			displayButton();
 		
 		}); // END FORM SUBMIT BUTTON
 
 		//on click of image div - function
-		$("img").on("click", function() {
+		$(document).on("click", "img", function() {
+			//create variable for still/animated conditions
 			var state = $(this).attr("data-state");
-			$("img").attr("data-state", "still")
 
-			 $("img").attr()
+			 
+			// if state variable is still
+		    if (state === "still") {
+               //reset image src to animated version
+               $(this).attr("src", $(this).attr("data-animate"));
+               //change state variable to animate
+               $(this).attr("data-state", "animate");
+          
 
-		        if (state === "still") {
-		              //reset image src to animated version
-		               $(this).attr("src", $(this).attr("data-animate"));
-		              //change state variable to animate
-		              $(this).attr("data-state", "animate");
-		          
-
-		        } else {
-		            //it's already animated
-		            //reset image src to still version
-		            $(this).attr("src", $(this).attr("data-still"));
-		            // change state variable to still 
-		            $(this).attr("data-state", "still")
-
-		        }
-
+        	} else {
+           		 //it's already animated
+            	 //reset image src to still version
+            	 $(this).attr("src", $(this).attr("data-still"));
+            	 // change state variable to still 
+            	 $(this).attr("data-state", "still");
+       		}
 
 		})// END IMAGE CLICK FUNCTION
 					
