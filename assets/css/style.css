@@ -1,0 +1,33 @@
+body {
+	background: url("http://wallpaper-gallery.net/images/cool-background-images/cool-background-images-4.jpg");
+}
+
+button {
+	color: white;
+	background-color: grey;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#imageswithDescription {
+	display: inline-block;
+	color: white;
+}
+img {
+	border: 2px solid white;
+	max-height: 300px;
+	max-width: 300px;
+	
+}
+form {
+	clear: both;
+}
+
+label {
+	color: white;
+}
+
+#formSubmit {
+	color: grey;
+}
+
+
