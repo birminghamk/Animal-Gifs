@@ -36,7 +36,7 @@ $ (function() {
 			$("#imageswithDescription").empty();
 			// AJAX call to GIPHY
 			//set queryURL with designated variables
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&rating= " + rating + "&limit=10&api_key=IZ1X641xsZu5eeKFKlzEF6TSwOBQnrGZ"
+			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&rating= " + rating + "&limit=10&api_key=IZ1X641xsZu5eeKFKlzEF6TSwOBQnrGZ"
 
 			$.ajax({
 				// URL | //https:
