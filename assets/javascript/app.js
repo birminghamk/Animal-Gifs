@@ -107,23 +107,27 @@ $ (function() {
 		$(document).on("click", "img", function() {
 			//create variable for still/animated conditions
 			var state = $(this).attr("data-state");
-
+			// var newState = state === "still" ? "animate" : "still";
+			var newState;
 			 
 			// if state variable is still
 		    if (state === "still") {
-               //reset image src to animated version
-               $(this).attr("src", $(this).attr("data-animate"));
-               //change state variable to animate
-               $(this).attr("data-state", "animate");
+		    	// set newState
+		    	newState = "animate";
+         
           
 
         	} else {
-           		 //it's already animated
-            	 //reset image src to still version
-            	 $(this).attr("src", $(this).attr("data-still"));
-            	 // change state variable to still 
-            	 $(this).attr("data-state", "still");
+        		// set newState
+        		newState = "still";
+      
        		}
+
+       		      //it's already animated
+            	 //reset image src to still version
+            	 $(this).attr("src", $(this).attr("data-"+newState));
+            	 // change state variable to still 
+            	 $(this).attr("data-state", newState);
 
 		})// END IMAGE CLICK FUNCTION
 					
