@@ -10,7 +10,7 @@ Click on a button to receive associated gifs from the Giphy-API. Users can also 
 ## Technologies/Software
 	-HTML/CSS
 	-Javascript/jQuery
-	- Giphy-AP
+	- Giphy-API
 	- AJAX calls
 ## Authors
 	-Kate Birmingham

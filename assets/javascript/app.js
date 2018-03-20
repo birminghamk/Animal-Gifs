@@ -53,6 +53,8 @@ $ (function() {
 				for (var i = 0; i < results.length; i++) {
 					// create jQuery div
 					var div = $("<div>")
+					//add class to div
+					div.addClass("images");
 					// create jQuery image
 					var img = $("<img>")
 					// set the src attribute of jQuery image to be the image from GIPHY response (data[i].images.original_still)
