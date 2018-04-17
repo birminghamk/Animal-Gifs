@@ -1,4 +1,6 @@
-# GIPHY
+# Animal Gifs
+
+![Demo](https://user-images.githubusercontent.com/30732917/38842668-7ccc2a54-41a8-11e8-8f03-f925b72bb96f.gif)
 
 Live link: https://birminghamk.github.io/Animal-Gifs/
 
