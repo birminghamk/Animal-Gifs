@@ -1,6 +1,6 @@
 # GIPHY
 
-https://birminghamk.github.io/GIPHY/
+Live link: https://birminghamk.github.io/Animal-Gifs/
 
 ## How It Works
 
@@ -8,8 +8,8 @@ Click on a button to receive associated gifs from the Giphy-API. Users can also 
 
 
 ## Technologies/Software
-	-HTML/CSS
-	-Javascript/jQuery
+	- HTML/CSS
+	- Javascript/jQuery
 	- Giphy-API
 	- AJAX calls
 ## Authors
