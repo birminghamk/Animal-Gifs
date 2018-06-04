@@ -35,8 +35,10 @@ form {
 	font-size: 16px;
 }
 
-label {
+.input-group-text {
 	color: white;
+	background-color: grey;
+	font-size: 20px;
 }
 #formSubmit {
 	color: grey;
@@ -44,9 +46,11 @@ label {
 }
 .individualButton {
 	width: 15%;
+	color: white;
 	border-radius: 15%;
 	background-color: lightgrey;
 	margin-top: 20px;
+	border: 1px solid white;
 }
 div.images {
 	display: inline-block;
@@ -56,8 +60,8 @@ div.images {
 }
 
 @media screen and (max-width: 500px) {
-	input#userText {
-	width: 95%;
+	input-group {
+	width: 70%;
 	}
 	.container {
 		width: 90%;
