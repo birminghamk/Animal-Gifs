@@ -13,7 +13,7 @@ Click on a button to receive associated gifs from the Giphy-API. Users can also 
 	- HTML/CSS
 	- Javascript/jQuery
 	- Giphy-API
-	- AJAX calls
+	- AJAX
 ## Authors
 	-Kate Birmingham
 
